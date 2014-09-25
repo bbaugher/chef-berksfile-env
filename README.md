@@ -34,7 +34,7 @@ Your environment file must by in `.rb` format and look like this,
 
     require 'chef-berksfile-env'
     
-    # The name must be defined so we can use it to find the Berksfile
+    # The name must be defined first so we can use it to find the Berksfile
     name "my_env"
     
     # Load Berksfile locked dependencies as my environment's cookbook version contraints

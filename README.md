@@ -3,6 +3,8 @@ Chef-Berksfile-Env
 
 A Chef plugin which allows you to lock down your Chef Environment's cookbook versions with a Berksfile.
 
+This is effectively the same as doing `berks apply ...` but via `knife environment from file ...`.
+
 Installation
 ------------
 

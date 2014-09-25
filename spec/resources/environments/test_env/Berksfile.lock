@@ -1,0 +1,7 @@
+DEPENDENCIES
+  apache_zookeeper
+
+GRAPH
+  apache_zookeeper (0.3.2)
+    java (>= 0.0.0)
+  java (1.28.0)

@@ -51,3 +51,27 @@ Our Berksfile also provides an easy way to ensure all the cookbooks and their ve
 are uploaded to our chef-server,
 
     berks upload
+
+How the Plugin Finds the Berksfile
+----------------------------------
+
+If you are curious how the plugin knows to find the Berksfile in `chef-repo/environments/[ENV]/Berksfile`, you 
+want to put your Berksfile somewhere else or you have run into this error `Expected Berksfile at [/path/../Berksfile] but does not exist`, 
+this section will explain how this works and ways to tweak the path or fix your error.
+
+`load_berksfile` has an optional argument which represents the path to your Berksfile. This path can be pseduo relative (explained in a moment) 
+or absolute. By default the value is `environments/[ENV_NAME]/Berksfile`.
+
+By pseduo relative I mean that its a relative path but the plugin will check to see if the directory we are executing from partially matches 
+our relative path. So if we are running knife from `/home/chef-repo/environments` and our relative path is `chef-repo/environments/dev/Berksfile` 
+the plugin will see that the relative path is partially included in our execution directory and will attempt to merge the two to come up with 
+`/home/chef-repo/environments/dev/Berksfile`. If we can't make any match at all we attempt to guess the path by just joining the relative path 
+with our execution directory.
+
+So why do we do this? Well the only way to use this plugin is if your environment is in Ruby format. Chef's `knife from file ...` uses Ruby's
+`instance_eval` in order to do this. This means the code on Chef's end effectively looks like this,
+
+    env.instance_eval(IO.read(env_ruby_file))
+
+which means that any context about the location of the environment file is lost. So we have no great way to discern the location of our environment 
+Ruby file, so instead we guess.

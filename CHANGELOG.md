@@ -1,7 +1,7 @@
 Change Log
 ==========
 
-[1.0.0 - 09-25-2014](https://github.com/bbaugher/chef-berksfile-env/issues?milestone=1&state=closed)
+[1.1.0 - 04-07-2015](https://github.com/bbaugher/chef-berksfile-env/issues?milestone=2&state=closed)
 ----------------------------------------------------------------------------------------------------
 
-  * [Feature] [Issue-1](https://github.com/bbaugher/chef-berksfile-env/issues/1) : Add support for locking down cookbook versions in a Chef Environment
+  * [Enhancement] [Issue-2](https://github.com/bbaugher/chef-berksfile-env/issues/2) : Adding Chef 12 to version range

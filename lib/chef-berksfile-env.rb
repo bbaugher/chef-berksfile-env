@@ -6,6 +6,17 @@ require 'pathname'
 class Chef
   class Environment
 
+    # @param path path to lock file
+    # @raise Berkshelf::LockfileNotFound exception
+    def load_berksfile_lock(path=nil)
+      lockfile = ::Berkshelf::Lockfile.from_file(path)
+      raise ::Berkshelf::LockfileNotFound, "Berks lock file is not present: #{path}" unless lockfile.present?
+
+      lockfile.locks.each_pair do |_, dependency|
+        cookbook dependency.name, "= #{dependency.locked_version.to_s}"
+      end
+    end
+
     def load_berksfile(path=nil)
       raise "You must define the environment name before doing load_berksfile" if path.nil? && name.empty?
       

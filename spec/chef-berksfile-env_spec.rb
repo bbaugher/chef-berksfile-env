@@ -3,8 +3,12 @@ include SpecHelper
 
 describe Chef::Environment do
 
+  before(:all) do
+    berks_install
+  end
+
   describe "#load_berksfile" do
-   
+
     let(:env) do
       env = Chef::Environment.new
 
@@ -40,7 +44,7 @@ describe Chef::Environment do
       describe "while executing in root dir of relative path" do
         it "should add the Berksfile dependencies" do
           test_env = Chef::Environment.new
-          test_env.load_berksfile "chef-berksfile-env/spec/resources/environments/test_env/Berksfile"
+          test_env.load_berksfile berksfile_path
 
           expect(test_env.cookbook_versions).to eq env.cookbook_versions
         end
@@ -50,7 +54,7 @@ describe Chef::Environment do
         it "should add the Berksfile dependencies" do
           Dir.chdir "spec/resources" do
             test_env = Chef::Environment.new
-            test_env.load_berksfile "chef-berksfile-env/spec/resources/environments/test_env/Berksfile"
+            test_env.load_berksfile berksfile_path
 
             expect(test_env.cookbook_versions).to eq env.cookbook_versions
           end
@@ -60,8 +64,8 @@ describe Chef::Environment do
       describe "whose Berksfile does not exist" do
         it "should raise an error" do
           test_env = Chef::Environment.new
-          expect { test_env.load_berksfile "Berksfile" }.to raise_error
-          
+          expect { test_env.load_berksfile "Berksfile" }.to raise_error RuntimeError
+
         end
       end
 

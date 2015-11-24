@@ -1,6 +1,11 @@
 Change Log
 ==========
 
+[1.3.0 - 11-24-2015](https://github.com/bbaugher/chef-berksfile-env/issues?milestone=4&state=closed)
+----------------------------------------------------------------------------------------------------
+
+  * [Enhancement] [Issue-5](https://github.com/bbaugher/chef-berksfile-env/issues/5) : Support berkshelf 4.0
+
 [1.2.0 - 09-15-2015](https://github.com/bbaugher/chef-berksfile-env/issues?milestone=3&state=closed)
 ----------------------------------------------------------------------------------------------------
 

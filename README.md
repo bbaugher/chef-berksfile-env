@@ -5,6 +5,8 @@ A Chef plugin which allows you to lock down your Chef Environment's cookbook ver
 
 This is effectively the same as doing `berks apply ...` but via `knife environment from file ...`.
 
+View the [Change Log](https://github.com/bbaugher/chef-berksfile-env/blob/master/CHANGELOG.md) to see what has changed.
+
 Installation
 ------------
 

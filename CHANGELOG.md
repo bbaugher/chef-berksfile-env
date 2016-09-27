@@ -1,6 +1,11 @@
 Change Log
 ==========
 
+[1.4.0 - 09-27-2016](https://github.com/bbaugher/chef-berksfile-env/issues?milestone=5&state=closed)
+----------------------------------------------------------------------------------------------------
+
+  * [Enhancement] [Issue-6](https://github.com/bbaugher/chef-berksfile-env/issues/6) : Allow berkshelf 5.0 in dependencies
+
 [1.3.0 - 11-24-2015](https://github.com/bbaugher/chef-berksfile-env/issues?milestone=4&state=closed)
 ----------------------------------------------------------------------------------------------------
 

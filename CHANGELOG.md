@@ -1,6 +1,11 @@
 Change Log
 ==========
 
+[1.5.0 - 05-04-2018](https://github.com/bbaugher/chef-berksfile-env/issues?milestone=6&state=closed)
+----------------------------------------------------------------------------------------------------
+
+  * [Enhancement] [Issue-7](https://github.com/bbaugher/chef-berksfile-env/issues/7) : Add bekshelf 6, 7 and chef 13, 14
+
 [1.4.0 - 09-27-2016](https://github.com/bbaugher/chef-berksfile-env/issues?milestone=5&state=closed)
 ----------------------------------------------------------------------------------------------------
 
